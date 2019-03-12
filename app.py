@@ -1,3 +1,5 @@
+import random
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -16,6 +18,15 @@ def hachimantai():
 @app.route("/goodbye")
 def goodbye():
     return "<html>Good Bye!</html>"
+
+
+@app.route("/omikuji")
+def omikuji():
+    omikuji_list = ["大吉", "中吉", "吉", "凶", "大凶"]
+
+    result = random.choice(omikuji_list)
+
+    return f"あなたの今日の運勢は...{result}です！"
 
 
 """
