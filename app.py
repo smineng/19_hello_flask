@@ -15,6 +15,11 @@ def hachimantai():
     return "<html>スパルタキャンプ in 八幡平</html>"
 
 
+"""
+課題
+http://127.0.0.1:5000/goodbye というURLを入力したら、「Good Bye!」と表示されるようにしてください
+"""
+
 @app.route("/goodbye")
 def goodbye():
     return "<html>Good Bye!</html>"
@@ -29,10 +34,13 @@ def omikuji():
     return f"あなたの今日の運勢は...{result}です！"
 
 
-"""
-課題
-http://127.0.0.1:5000/goodbye というURLを入力したら、「Good Bye!」と表示されるようにしてください
-"""
+@app.route("/user/<username>")
+def greet(username):
+    return f"Hi {username}"
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
